@@ -1,0 +1,112 @@
+<cloud-title></cloud-title>
+<br><br>
+
+<form [formGroup]="registration" (ngSubmit)="register()" class="example-form">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title><h2 style="font-weight: bold;">SIGN UP</h2></mat-card-title>
+    <mat-card-subtitle>Register in to <strong>"Taco Store"</strong></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+      <!-- Email-->
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Enter your email</mat-label>
+          <input type="email" matInput placeholder="taco@example.com" formControlName = "username" required>
+          <mat-error *ngIf="username.hasError('email') && !username.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="username.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div><br>
+
+      <!-- Password-->
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName = "password" required>
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div><br>
+
+      <!-- Full Name-->
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Enter your full name</mat-label>
+          <input matInput formControlName = "fullname" required>
+          <mat-error *ngIf="fullname.hasError('required')">
+            Full Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div><br>
+
+      <!-- Street-->
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Enter your street address</mat-label>
+          <input matInput formControlName = "street" required>
+          <mat-error *ngIf="street.hasError('required')">
+            Street address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div><br>
+
+      <!-- City-->
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Enter your city</mat-label>
+          <input matInput formControlName = "city" required>
+          <mat-error *ngIf="city.hasError('required')">
+            City is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div><br>
+
+      <!-- State-->
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Enter your state</mat-label>
+          <input matInput formControlName = "state" required>
+          <mat-error *ngIf="state.hasError('required')">
+            State is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div><br>
+
+      <!-- Zip code-->
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Enter zip code</mat-label>
+          <input matInput formControlName = "zip" required>
+          <mat-error *ngIf="zip.hasError('required')">
+            Zip code is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div><br>
+
+      <!-- Phone number-->
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Enter your phone number</mat-label>
+          <input matInput formControlName = "phoneNumber" required>
+          <mat-error *ngIf="phoneNumber.hasError('required')">
+            Phone number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      
+  </mat-card-content>
+  <mat-card-actions>
+    <button type="submit" mat-raised-button color="accent" [disabled]="registration.invalid">SUBMIT</button>
+  </mat-card-actions>
+</mat-card>
+</form>

@@ -1,0 +1,15 @@
+<mat-toolbar color="accent" class="toolbar">
+
+    <a routerLink = "/"><button mat-button>Taco Store</button></a>
+    <span class="example-spacer"></span>
+
+    <a [routerLink]="['design']"><button mat-button>Design a Taco</button></a>
+    <a [routerLink]="['recents']"><button mat-button>Latest designs</button></a>
+    <a [routerLink]="['specials']"><button mat-button>Specials</button></a>
+    <a [routerLink]="['locations']"><button mat-button>Locations</button></a>
+
+    <a href="login"><button mat-button><img src="assets/down-triangle.png"/>SIGN IN or SIGN UP</button></a>
+
+    <a [routerLink]="['cart']"><button mat-button><img src="assets/cart.png"/>{{cart.getItemsInCart().length * 4.99 | currency}}</button></a>
+
+</mat-toolbar>

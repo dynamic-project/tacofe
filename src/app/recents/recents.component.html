@@ -1,0 +1,21 @@
+<cloud-title></cloud-title>
+<br>
+<mat-card><h1 style="margin-bottom: 10px; color: green;">Admire some recently created taco masterpieces</h1>
+  <p>Even the greatest artists sometimes need to be inspired by the works of others.
+    Here are some of the most recently created tacos, designed by taco artists just like you...</p></mat-card>
+<br>
+  <div class="tacoblock" *ngFor="let taco of recentTacos">
+      <div class="tacoName"><span class="small">The</span><br/>"{{taco.name}}"</div>
+      <div class="tacoDesc">
+        <ul class="commalist">
+          <li *ngFor="let ingredient of taco.ingredients | nonwraps">{{ingredient.name}}</li>
+        </ul>
+        <div *ngIf="(taco.ingredients | wraps)?.length > 0">
+        <span>wrapped in</span><ul class="commalist">
+            <li *ngFor="let ingredient of taco.ingredients | wraps">{{ingredient.name}}</li>
+        </ul>
+        </div>
+        <div *ngIf="(taco.ingredients | wraps)?.length == 0">in a bowl</div>
+      </div>
+      <a routerLink="/cart" [queryParams] = "{id: taco.id}"><little-button label="Order this taco"></little-button></a>
+  </div>

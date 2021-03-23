@@ -1,0 +1,24 @@
+.example-card {
+    max-width: 300px;
+  }
+
+  .card {
+    float: left;
+    width: 60%;
+  }
+
+  .pic {
+    float: left;
+    margin-top: 90px;
+    width: 40%;
+  }
+  
+  @media screen and (max-width:800px) {
+    .card, .pic {
+      width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+
+    .pic {
+      margin-left: 10px;
+    }
+  }

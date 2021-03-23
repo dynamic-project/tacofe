@@ -1,0 +1,29 @@
+div.groupBox {
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+  background-image: url('../../assets/taco-icon.png');
+  background-repeat: no-repeat;
+  background-color: white;
+  margin: 15px;
+  border-radius: 10px;
+  text-align: right;
+  padding: 0 10px 10px 0;
+  height: 100%;
+  color: green;
+  border: 1px solid green;
+}
+
+div.groupBoxTitle {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid green;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+div.groupBoxContent {
+  padding: 20px;
+  text-align: left;
+  line-height: 130%;
+}

@@ -1,0 +1,51 @@
+<cloud-title></cloud-title>
+<br>
+<mat-card><h1 style="margin-bottom: 10px; color: green;">Design your taco masterpiece</h1> 
+  <p>We provide a palette of fresh ingredients...you provide the inspiration! Select the
+    components that will come together as your crowning achievement of taco workmanship.</p></mat-card>
+<br>
+
+<form #tacoDesign="ngForm" (ngSubmit)="onSubmit()">
+  <div class="ingredientsblock" style="text-align: center; width: 100%;">
+    <group-box title="Record your wrap">
+      <span *ngFor="let wrap of wraps">
+        <input style="margin-right: 10px;" type="checkbox" (change)="updateIngredients(wrap, $event)" name="ingredients" value="{{wrap.id}}"/>{{wrap.name}}<br/>
+      </span>
+    </group-box>
+    <group-box title="Pick your proteins">
+      <span *ngFor="let protein of proteins">
+        <input style="margin-right: 10px;" type="checkbox" (change)="updateIngredients(protein, $event)" name="ingredients" value="{{protein.id}}"/>{{protein.name}}<br/>
+      </span>
+    </group-box>
+    <group-box title="Choose your cheeses">
+      <span *ngFor="let cheese of cheeses">
+        <input style="margin-right: 10px;" type="checkbox" (change)="updateIngredients(cheese, $event)" name="ingredients" value="{{cheese.id}}"/>{{cheese.name}}<br/>
+      </span>
+    </group-box>
+    <group-box title="Vouch for your veggies">
+      <span *ngFor="let veggie of veggies">
+        <input style="margin-right: 10px;" type="checkbox" (change)="updateIngredients(veggie, $event)" name="ingredients" value="{{veggie.id}}"/>{{veggie.name}}<br/>
+      </span>
+    </group-box>
+    <group-box title="Select your sauces">
+      <span *ngFor="let sauce of sauces">
+        <input style="margin-right: 10px;" type="checkbox" (change)="updateIngredients(sauce, $event)" name="ingredients" value="{{sauce.id}}"/>{{sauce.name}}<br/>
+      </span>
+    </group-box>
+    <group-box title="Name your taco creation"> 
+      "<input style="margin: 13px;" type="text" required minlength="5" [(ngModel)]="model.name" name="name" #name="ngModel" class="nameField"/>"!
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div style="color: red;" *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div style="color: red;" *ngIf="name.errors.minlength">
+          Name must be at least 5 characters long.
+        </div>
+      </div>
+    </group-box>
+  </div>
+  <br>
+  <div style="text-align:center; width:100%;">
+    <button mat-raised-button color="accent" [disabled]="tacoDesign.invalid">Construct this taco</button>
+  </div>
+</form>

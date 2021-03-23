@@ -1,0 +1,63 @@
+div.tacoblock {
+  display: inline-block;
+  vertical-align: top;
+  background-image: url('../../assets/taco-icon.png');
+  background-repeat: no-repeat;
+  background-color: white;
+  margin: 10px;
+  width: 325px;
+  border-radius: 10px;
+  text-align: right;
+  padding: 0 10px 10px 0;
+  height: 100%;
+  color: green;
+  border: 1px solid green;
+}
+
+div.tacoName {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid green;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+}
+
+div.tacoDesc {
+  padding: 20px;
+  text-align: center;
+  font-size: 12pt;
+}
+
+ul.commalist {
+  display: inline;
+  list-style: none;
+  padding: 0;
+}
+
+ul.commalist li {
+  display: inline;
+}
+
+ul.commalist li:not(:first-child):before {
+  content: ", ";
+}
+
+ul.commalist li:last-child:before {
+  content: " and ";
+}
+
+ul.commalist li:only-child:before {
+  content: "";
+}
+
+.small {
+  font-size: 12pt;
+}
+
+/* Newly added */
+
+@media screen and (max-width:800px) {
+  .tacoblock {
+    min-width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}

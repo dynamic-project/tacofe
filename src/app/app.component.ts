@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Taco Cloud';
 
   constructor(private breakPoint: BreakpointObserver) {}
+  
   ngOnInit(): void {
     if(this.breakPoint.isMatched('(max-width: 600px)')){
       console.log('Console: width = 600px.');

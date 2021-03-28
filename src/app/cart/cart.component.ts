@@ -33,7 +33,7 @@ export class CartComponent implements OnInit {
       this.tacoId = params['id'];
     });
 
-    this.tacoUrl = 'http://localhost:8080/design/' + this.tacoId;
+    this.tacoUrl = 'https://tacobe.herokuapp.com/design/' + this.tacoId;
     this.httpClient.get(this.tacoUrl).subscribe(taco => this.cart.addToCart(taco));
     this.tacoUrl = null;
   }
@@ -53,7 +53,7 @@ export class CartComponent implements OnInit {
     });
 
     this.httpClient.post(
-        'http://localhost:8080/orders',
+        'https://tacobe.herokuapp.com/orders',
         this.model, {
             headers: new HttpHeaders().set('Content-type', 'application/json')
                     .set('Accept', 'application/json'),
